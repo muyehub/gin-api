@@ -33,9 +33,9 @@ JWT:
 Database:
   DBType: mysql
   UserName: root
-  Password: rootroot
+  Password: pass
   Host: 127.0.0.1:3306
-  DBName: dbname
+  DBName: test
   TablePrefix: db_
   Charset: utf8
   ParseTime: True
