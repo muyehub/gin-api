@@ -52,6 +52,10 @@ func init() {
 	}*/
 }
 
+// @title gin-api
+// @version 1.0
+// @description 用 Gin 框架实现的 Api 接口系统
+// @termsOfService https://github.com/muyehub/gin-api
 func main() {
 	gin.SetMode(global.ServerSetting.RunMode)
 	router := routers.NewRouter()
