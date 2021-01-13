@@ -7,6 +7,12 @@ import (
 	"strings"
 	"time"
 
+	"github.com/muyehub/gin-api/pkg/tracer"
+
+	"github.com/muyehub/gin-api/pkg/validator"
+
+	"github.com/gin-gonic/gin/binding"
+
 	"github.com/muyehub/gin-api/pkg/logger"
 	"gopkg.in/natefinch/lumberjack.v2"
 
@@ -42,14 +48,14 @@ func init() {
 	if err != nil {
 		log.Fatalf("init.setupDBEngine err: %v", err)
 	}
-	/*err = setupValidator()
+	err = setupValidator()
 	if err != nil {
 		log.Fatalf("init.setupValidator err: %v", err)
 	}
 	err = setupTracer()
 	if err != nil {
 		log.Fatalf("init.setupTracer err: %v", err)
-	}*/
+	}
 }
 
 // @title gin-api
@@ -141,7 +147,7 @@ func setupDBEngine() error {
 	return nil
 }
 
-/*func setupValidator() error {
+func setupValidator() error {
 	global.Validator = validator.NewCustomValidator()
 	global.Validator.Engine()
 	binding.Validator = global.Validator
@@ -156,4 +162,4 @@ func setupTracer() error {
 	}
 	global.Tracer = jaegerTracer
 	return nil
-}*/
+}
